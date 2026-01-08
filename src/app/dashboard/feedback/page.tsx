@@ -17,37 +17,30 @@ export default async function FeedbackListPage() {
 
     return (
         <div>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '2rem' }}>Incoming Feedback</h1>
+            <h1 className="text-2xl font-semibold mb-8 text-gray-900">Incoming Feedback</h1>
 
             {feedbacks.length === 0 ? (
-                <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
-                    <p style={{ color: 'var(--text-secondary)' }}>No feedback received yet.</p>
+                <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-12 text-center">
+                    <p className="text-gray-500">No feedback received yet.</p>
                 </div>
             ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {feedbacks.map(item => (
-                        <div key={item.id} className="card">
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                                <span style={{
-                                    fontSize: '0.75rem',
-                                    padding: '0.125rem 0.5rem',
-                                    borderRadius: 'var(--radius-sm)',
-                                    background: 'var(--bg-secondary)',
-                                    color: 'var(--text-secondary)',
-                                    fontWeight: 600
-                                }}>
+                        <div key={item.id} className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 flex flex-col">
+                            <div className="flex justify-between items-start mb-4">
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary/10 text-secondary">
                                     {item.type}
                                 </span>
-                                <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+                                <span className="text-xs text-gray-500">
                                     {new Date(item.createdAt).toLocaleDateString()}
                                 </span>
                             </div>
-                            <p style={{ marginBottom: '1rem', lineHeight: 1.5 }}>
+                            <p className="text-gray-700 text-sm mb-4 flex-1">
                                 {item.content}
                             </p>
                             {item.sender && (
-                                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-subtle)', paddingTop: '0.5rem' }}>
-                                    From: {item.sender}
+                                <p className="text-xs text-gray-500 border-t border-gray-100 pt-3">
+                                    From: <span className="font-medium">{item.sender}</span>
                                 </p>
                             )}
                         </div>

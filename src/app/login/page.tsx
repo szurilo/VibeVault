@@ -55,7 +55,7 @@ export default function LoginPage() {
                             placeholder="demo@vibevault.app"
                             defaultValue="demo@vibevault.app"
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                         />
                     </div>
                     <div>
@@ -66,10 +66,10 @@ export default function LoginPage() {
                             placeholder="••••••••"
                             defaultValue="demo"
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                         />
                     </div>
-                    <button type="submit" disabled={loading} className="w-full mt-2 inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-white bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 transition-colors">
+                    <button type="submit" disabled={loading} className="w-full mt-2 inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-white bg-secondary hover:bg-secondary/90 disabled:opacity-50 transition-colors">
                         {loading ? 'Signing in...' : 'Sign In'}
                     </button>
                 </form>

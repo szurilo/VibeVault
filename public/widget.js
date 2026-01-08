@@ -30,7 +30,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #4f46e5;
+      background: #209CEE;
       color: white;
       border: none;
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
@@ -94,7 +94,7 @@
       box-sizing: border-box;
     }
     button.submit-btn {
-      background: #4f46e5;
+      background: #209CEE;
       color: white;
       border: none;
       padding: 8px;
